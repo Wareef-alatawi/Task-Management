@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>منظم مهامي</title>
+
+<link rel="stylesheet" href="style.css">
+<div class="app">
+
+    <!-- رأس التطبيق -->
+    <header class="header">
+        <div>
+            <h1>منظم مهامي ✨</h1>
+            <p>خططي ليومك وأنجزي أهدافك</p>
+        </div>
+
+        <div class="clock">
+            <span id="clock">00:00:00</span>
+            <small id="date">التاريخ</small>
+        </div>
+    </header>
+
+
+    <!-- الإحصائيات -->
+    <section class="stats">
+
+        <div class="stat-card blue">
+            <span>كل المهام</span>
+            <strong id="totalTasks">0</strong>
+        </div>
+
+        <div class="stat-card orange">
+            <span>قيد التنفيذ</span>
+            <strong id="pendingTasks">0</strong>
+        </div>
+
+        <div class="stat-card green">
+            <span>مكتملة</span>
+            <strong id="completedTasks">0</strong>
+        </div>
+
+    </section>
+
+
+    <!-- إضافة مهمة -->
+    <section class="card">
+
+        <h2>إضافة مهمة جديدة</h2>
+
+        <div class="form-group">
+
+            <label for="taskInput">اسم المهمة</label>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="مثال: مراجعة البرمجة"
+            >
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="priority">الأولوية</label>
+
+                <select id="priority">
+                    <option value="normal">عادية</option>
+                    <option value="high">مهمة جدًا</option>
+                    <option value="low">منخفضة</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="taskDate">التاريخ</label>
+
+                <input type="date" id="taskDate">
+            </div>
+
+        </div>
+
+
+        <button id="addTaskButton" class="primary-button">
+            + إضافة المهمة
+        </button>
+
+    </section>
+
+
+    <!-- فلترة المهام -->
+    <section class="card">
+
+        <div class="section-title">
+            <h2>مهامي</h2>
+
+            <button id="clearCompleted" class="text-button">
+                حذف المكتملة
+            </button>
+        </div>
+
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="all">
+                الكل
+            </button>
+
+            <button class="filter" data-filter="pending">
+                غير مكتملة
+            </button>
+
+            <button class="filter" data-filter="completed">
+                مكتملة
+            </button>
+
+        </div>
+
+
+        <ul id="taskList"></ul>
+
+        <p id="emptyMessage" class="empty-message">
+            لا توجد مهام حاليًا 🌷
+        </p>
+
+    </section>
+
+
+    <!-- المؤقت -->
+    <section class="card timer-card">
+
+        <h2>⏱️ مؤقت التركيز</h2>
+
+        <p>استخدمي المؤقت للتركيز على مهمة واحدة.</p>
+
+        <div id="timerDisplay" class="timer-display">
+            25:00
+        </div>
+
+        <div class="timer-buttons">
+
+            <button id="startTimer" class="primary-button">
+                بدء
+            </button>
+
+            <button id="pauseTimer" class="secondary-button">
+                إيقاف مؤقت
+            </button>
+
+            <button id="resetTimer" class="secondary-button">
+                إعادة
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
